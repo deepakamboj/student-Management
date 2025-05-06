@@ -28,8 +28,8 @@ public class StudentController {
 
 	@GetMapping("/getAll")
 	public List<Student> getAll() {
-		List<Student> students = studentService.getAll();
-		return students;
+		List<Student> getAllstudents = studentService.getAll();
+		return getAllstudents;
 	}
 
 	@GetMapping("/get/{rollNo}")
