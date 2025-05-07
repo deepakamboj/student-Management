@@ -14,4 +14,6 @@ public interface StudentService {
 
 	public void delete(int rollNo);
 
+	public Student update(Student student, int rollNo);
+
 }
