@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.tcs.student.entity.Student;
 import com.tcs.student.service.StudentService;
@@ -44,5 +45,10 @@ public class StudentController {
 		return "Record successfully deleted";
 
 	}
+	@PutMapping("/update/{rollNo}")
+	public Student update(@RequestBody Student student,@PathVariable int rollNo) {
+		return studentService.update(student, rollNo);
+	}
+	
 
 }

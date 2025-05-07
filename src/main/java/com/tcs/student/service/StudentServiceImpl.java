@@ -36,5 +36,16 @@ public class StudentServiceImpl implements StudentService {
 	public void delete(int rollNo) {
 		studentRepository.deleteById(rollNo);
 	}
+	@Override
+	public Student update(Student newStudent,int rollNo) {
+		Student oldStudent= studentRepository.findById(rollNo).get();
+		//oldStudent.setRollNo(newStudent.getRollNo()); don't change rollno due to security of an id
+		oldStudent.setAge(newStudent.getAge());
+		oldStudent.setDob(newStudent.getDob());
+		oldStudent.setFatherName(newStudent.getFatherName());
+		oldStudent.setFees(newStudent.getFees());
+		oldStudent.setName(newStudent.getName());
+		return studentRepository.save(oldStudent);
+	}
 
 }
