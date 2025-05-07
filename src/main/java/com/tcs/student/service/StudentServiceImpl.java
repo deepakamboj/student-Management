@@ -32,4 +32,9 @@ public class StudentServiceImpl implements StudentService {
 		return studentRepository.save(student);
 	}
 
+	@Override
+	public void delete(int rollNo) {
+		studentRepository.deleteById(rollNo);
+	}
+
 }
